@@ -12,11 +12,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className="bg-backgroundColor" lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ConvexClientProvider>
           <Navbar />
-      
             {children}
         </ConvexClientProvider>
       </body>

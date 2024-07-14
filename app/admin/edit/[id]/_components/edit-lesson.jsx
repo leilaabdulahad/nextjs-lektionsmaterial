@@ -69,6 +69,9 @@ export default function Edit({ lesson }) {
   if (!lesson) return null
 
   return (
+    
+
+
     <div>
       <PdfPicker
         pdfSrc={pdfSrc}

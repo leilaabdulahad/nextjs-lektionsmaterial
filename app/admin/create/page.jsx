@@ -78,7 +78,7 @@ export default function Create() {
 
     return (
         <div className="flex items-center justify-center min-h-screen">
-            <div className="max-w-2xl w-full p-6 bg-white shadow-md rounded-md">
+            <div className="max-w-2xl w-full p-6 shadow-md rounded-md">
                 <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Skapa lektionsplanering</h1>
                 <PdfPicker 
                     setSelectedPdf={file => { 

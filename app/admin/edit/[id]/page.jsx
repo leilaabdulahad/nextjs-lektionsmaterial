@@ -9,15 +9,15 @@ export default function EditPage({ params }) {
 
   if (!lesson) {
     return (
-      <div>
+      <div className='bg-backgroundColor'>
         <p>Lesson not found</p>
       </div>
     )
   }
 
   return (
-    <div className="mx-10">
-      <h1 className="text-4xl font-semibold text-center mt-8">Redigera</h1>
+    <div>
+      <h1 className="text-4xl font-semibold text-center ">Redigera</h1>
       <Edit lesson={lesson} />
     </div>
   )

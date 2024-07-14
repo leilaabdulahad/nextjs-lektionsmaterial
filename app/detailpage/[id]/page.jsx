@@ -11,13 +11,13 @@ function DetailsPage({ params }) {
 
   if (!lesson)
     return (
-      <div>
+      <div className='bg-backgroundColor'>
         <p>Lesson not found</p>
       </div>
     );
 
   return (
-    <div className="mx-10">
+    <div className='bg-backgroundColor pt-20'>
       {/* <h1 className="text-4xl font-semibold text-center mb-10">Detail page</h1> */}
       <DetailPage lesson={lesson} />
     </div>
