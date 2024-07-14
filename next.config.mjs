@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    pdfs: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'brilliant-rabbit-489.convex.cloud',
+        },
+      ],
+    },
+  };
+  
+  export default nextConfig;
