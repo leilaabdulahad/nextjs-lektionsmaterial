@@ -1,40 +1,52 @@
 import React, { useState } from 'react'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
 
 const Filter = ({ subjects, grades, onFilterChange }) => {
-  const [selectedSubject, setSelectedSubject] = useState('')
-  const [selectedGrade, setSelectedGrade] = useState('')
+  const [selectedSubject, setSelectedSubject] = useState('all')
+  const [selectedGrade, setSelectedGrade] = useState('all')
 
-  const handleSubjectChange = (e) => {
-    setSelectedSubject(e.target.value)
-    onFilterChange(e.target.value, selectedGrade)
+  const handleSubjectChange = (value) => {
+    setSelectedSubject(value)
+    onFilterChange(value === 'all' ? '' : value, selectedGrade === 'all' ? '' : selectedGrade)
   }
 
-  const handleGradeChange = (e) => {
-    setSelectedGrade(e.target.value)
-    onFilterChange(selectedSubject, e.target.value)
+  const handleGradeChange = (value) => {
+    setSelectedGrade(value)
+    onFilterChange(selectedSubject === 'all' ? '' : selectedSubject, value === 'all' ? '' : value)
   }
 
   return (
-    <div className=' flex flex-row space-x-4 p-4 rounded max-w-xs w-full'>
-      <select value={selectedSubject} 
-      onChange={handleSubjectChange}
-      className='p-2 border rounded bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500'
-      >
-        <option value="">Alla ämnen</option>
-        {subjects.map((subject, index) => (
-          <option key={index} value={subject}>{subject}</option>
-        ))}
-      </select>
+    <div className='flex flex-row space-x-4 p-4 rounded max-w-xs w-full'>
+      <Select value={selectedSubject} onValueChange={handleSubjectChange}>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue>{selectedSubject === 'all' ? 'Alla ämnen' : selectedSubject}</SelectValue>
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">Alla ämnen</SelectItem>
+          {subjects.map((subject, index) => (
+            <SelectItem key={index} value={subject}>{subject}</SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
 
-      <select value={selectedGrade} 
-      onChange={handleGradeChange}
-      className='p-2 border rounded bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500'
-      >
-        <option value="">Alla årskurser</option>
-        {grades.map((grade, index) => (
-          <option key={index} value={grade}>{grade}</option>
-        ))}
-      </select>
+      <Select value={selectedGrade} onValueChange={handleGradeChange}>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue>{selectedGrade === 'all' ? 'Alla årskurser' : selectedGrade}</SelectValue>
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">Alla årskurser</SelectItem>
+          {grades.map((grade, index) => (
+            <SelectItem key={index} value={grade}>{grade}</SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     </div>
   )
 }

@@ -24,6 +24,6 @@ export const headerText = [
         title: "LektionsMaterial",
         subtitle: "För lärare av lärare",
         description: "En samling högkvalitativ lektions material för årskurserna 6-9 i svenska, svenska som andraspråk och engelska. Vi strävar efter att erbjuda det bästa innehållet för att stödja dig i ditt arbete som lärare.",
-        buttonText: "Läs mer om oss"
+        // buttonText: "Läs mer om oss"
     }
 ]
