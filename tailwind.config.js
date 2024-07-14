@@ -20,6 +20,7 @@ module.exports = {
       colors: {
         backgroundColor: {
           DEFAULT: '#CFD2CD',
+          // DEFAULT: '#1F2937',
           lightButton: '#456990',
           darkButton: '#365371'
         },

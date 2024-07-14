@@ -1,6 +1,7 @@
 'use client'
 import { AllLessons } from "./admin/_components/all-lessons"
-import Header from "../components/Header"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
 function LandingPage() {
   return (
@@ -8,8 +9,8 @@ function LandingPage() {
       <Header />
       <div className="flex justify-center items-center mt-10 gap-4">
         <AllLessons />
-      
       </div>
+      <Footer />
     </div>
   )
 }
