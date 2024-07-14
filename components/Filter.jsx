@@ -28,7 +28,7 @@ const Filter = ({ subjects, grades, onFilterChange }) => {
         <SelectTrigger className="w-[180px]">
           <SelectValue>{selectedSubject === 'all' ? 'Alla ämnen' : selectedSubject}</SelectValue>
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="bg-white text-black">
           <SelectItem value="all">Alla ämnen</SelectItem>
           {subjects.map((subject, index) => (
             <SelectItem key={index} value={subject}>{subject}</SelectItem>
@@ -40,11 +40,11 @@ const Filter = ({ subjects, grades, onFilterChange }) => {
         <SelectTrigger className="w-[180px]">
           <SelectValue>{selectedGrade === 'all' ? 'Alla årskurser' : selectedGrade}</SelectValue>
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="bg-white text-black">
           <SelectItem value="all">Alla årskurser</SelectItem>
           {grades.map((grade, index) => (
             <SelectItem key={index} value={grade}>{grade}</SelectItem>
-          ))}
+            ))}
         </SelectContent>
       </Select>
     </div>
