@@ -18,6 +18,12 @@ module.exports = {
     },
     extend: {
       colors: {
+        backgroundColor: {
+          DEFAULT: '#CFD2CD',
+          lightButton: '#456990',
+          darkButton: '#365371'
+
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

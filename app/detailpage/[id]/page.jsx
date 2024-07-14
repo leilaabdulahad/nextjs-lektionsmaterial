@@ -18,7 +18,7 @@ function DetailsPage({ params }) {
 
   return (
     <div className="mx-10">
-      <h1 className="text-6xl font-semibold text-center mb-10">Detail page</h1>
+      {/* <h1 className="text-4xl font-semibold text-center mb-10">Detail page</h1> */}
       <DetailPage lesson={lesson} />
     </div>
   );

@@ -15,7 +15,7 @@ const Navbar = () => {
   }
   
   return (
-    <nav className="bg-custom-gray">
+    <nav className="bg-backgroundColor">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link href="/">
           <span className='font-semibold text-lg'>LektionsMaterial</span>

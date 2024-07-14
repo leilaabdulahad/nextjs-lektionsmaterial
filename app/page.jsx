@@ -4,7 +4,7 @@ import Header from "../components/Header"
 
 function LandingPage() {
   return (
-    <div className="bg-custom-gray">
+    <div className="bg-backgroundColor">
       <Header />
       <div className="flex justify-center items-center mt-10 gap-4">
         <AllLessons />
