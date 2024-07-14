@@ -10,7 +10,7 @@ export const navbar = [
     },   
     {
         label: 'Om oss',
-        route: '/'
+        route: '/about'
     },
     {
         label: 'Kontakt',
