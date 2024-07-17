@@ -11,7 +11,7 @@ This project aims to fill that gap by providing a complete set of teaching mater
 
 ### Technologies
 
-### Installations
+### Installation
 
 
 

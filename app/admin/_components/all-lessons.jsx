@@ -28,7 +28,7 @@ export const AllLessons = () => {
     }
 
     if (grade) {
-      filtered = filtered.filter(lesson => lesson.grade === Number(grade))
+      filtered = filtered.filter(lesson => lesson.grade.toLowerCase() === grade.toLowerCase())
     }
 
     setFilteredLessons(filtered)
@@ -46,8 +46,8 @@ export const AllLessons = () => {
       <div className="container mx-auto p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredLessons.map((lesson) => (
-          <Link href={`/detailpage/${lesson._id}`}>
-            <div key={lesson._id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <Link key={lesson._id} href={`/detailpage/${lesson._id}`}>
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-center">{lesson.title}</h3>
                 <div className="flex flex-row place-content-center space-x-4">

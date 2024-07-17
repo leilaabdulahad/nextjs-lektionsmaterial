@@ -53,7 +53,7 @@ export default function Create() {
         }
 
         try {
-            await createLesson({ pdfId, title, description, subject, grade: parseFloat(grade) })
+            await createLesson({ pdfId, title, description, subject, grade })
             console.log('Lektion skapad framgångsrikt')
         } catch (error) {
             console.error(error)

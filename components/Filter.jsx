@@ -38,7 +38,7 @@ const Filter = ({ subjects, grades, onFilterChange }) => {
 
       <Select value={selectedGrade} onValueChange={handleGradeChange}>
         <SelectTrigger className="w-[180px]">
-          <SelectValue>{selectedGrade === 'all' ? 'Alla årskurser' : selectedGrade}</SelectValue>
+          <SelectValue>{selectedGrade === 'all' ? 'Alla' : selectedGrade}</SelectValue>
         </SelectTrigger>
         <SelectContent className="bg-white text-black">
           <SelectItem value="all">Alla årskurser</SelectItem>

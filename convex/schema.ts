@@ -11,6 +11,6 @@ export default defineSchema({
     description: v.string(),
     pdfId: v.id("_storage"),
     subject: v.string(),
-    grade: v.number(),
+    grade: v.string(),
   }),
 });

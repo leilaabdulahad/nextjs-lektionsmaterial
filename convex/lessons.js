@@ -8,7 +8,7 @@ export const createLesson = mutation({
     description: v.string(),
     subject: v.string(),
     pdfId: v.id("_storage"),
-    grade: v.number(),
+    grade: v.string(),
   },
   handler: async (ctx, { title, description, subject, grade, pdfId }) => {
     const identity = await ctx.auth.getUserIdentity()
@@ -66,7 +66,7 @@ export const updateLesson = mutation({
     title: v.string(),
     description: v.string(),
     subject: v.string(),
-    grade: v.number(),
+    grade: v.string(),
     pdfId: v.id("_storage"),
   },
   handler: async (ctx, args) => {
