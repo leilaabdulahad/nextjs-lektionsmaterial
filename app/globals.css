@@ -2,30 +2,77 @@
   @tailwind components;
   @tailwind utilities;
 
-
-  /* components/HoverButton.module.css */
-
-.button {
-  --bg: #000;
-  --hover-bg: #838383;
-  --hover-text: #000;
+  /* Högstadie btn */
+.button-hs {
+  --bg: #405D72;
+  --hover-bg: #405D72;
+  --hover-text: #000000;
   color: #fff;
+  border-color: white;
+  font-family:  'Trebuchet MS', sans-serif;
   cursor: pointer;
   border: 1px solid var(--bg);
-  border-radius: 4px;
-  padding: 0.8em 2em;
+  border-color: white;
+  border-radius: 2px;
+  padding: 0.4em 1em;
   background: var(--bg);
   transition: 0.2s;
+  margin: 15px;
+  position: absolute;
+  top: 6rem;
+  right: 2rem;
+  transform: rotate(-5deg);
 }
 
-.button:hover {
-  color: var(--hover-text);
+.button-hs:hover {
+  color: white;
   transform: translate(-0.25rem, -0.25rem);
   background: var(--hover-bg);
   box-shadow: 0.25rem 0.25rem var(--bg);
+  border: 1px solid;
+  border-color: white;
+  transform: translate(-0.25rem, -0.25rem) rotate(-5deg);
 }
 
-.button:active {
+.button-hs:active {
   transform: translate(0);
   box-shadow: none;
 }
+
+/* Gymnasie btn */
+.button-gy {
+  --bg: #405D72;
+  --hover-bg: #405D72;
+  --hover-text: #000000;
+  color: #fff;
+  border-color: white;
+  font-family:  'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  border: 1px solid var(--bg);
+  border-radius: 2px;
+  border-color: white;
+  padding: 0.4em 1em;
+  background: var(--bg);
+  transition: 0.2s;
+  margin: 15px;
+  position: absolute;
+  top: 10rem;
+  right: 2rem;
+  transform: rotate(-5deg);
+}
+
+.button-gy:hover {
+  color: white;
+  transform: translate(-0.25rem, -0.25rem);
+  background: var(--hover-bg);
+  box-shadow: 0.25rem 0.25rem var(--bg);
+  border: 1px solid;
+  border-color: white;
+  transform: translate(-0.25rem, -0.25rem) rotate(-5deg); 
+}
+
+.button-gy:active {
+  transform: translate(0);
+  box-shadow: none;
+}
+

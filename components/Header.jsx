@@ -4,9 +4,9 @@ function Header() {
     
 
     return (
-        <div className="max-w-screen-lg mx-auto text-center text-black p-20 bg-header-background bg-cover bg-center bg-no-repeat h-96">
-            <button className="button">Gymnasiet</button>
-            <button className="button">Högstadiet</button>
+        <div className="relative max-w-screen-lg mx-auto text-center text-black p-20 bg-header-background bg-cover bg-center bg-no-repeat h-96">
+            <button className="button-gy absolute top-0 right-0 m-4">Gymnasiet</button>
+            <button className="button-hs absolute top-20 right-0 m-4">Högstadiet</button>
        
         </div>
     )
