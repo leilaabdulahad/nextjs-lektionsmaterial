@@ -10,7 +10,7 @@ export const navbar = [
     },
     {
         label: "Lektionsplanering Gymnasiet",
-        route: '/'
+        route: '/grades/gymnasiet'
     },
     {
         label: 'Ladda upp lektionsplanering',
