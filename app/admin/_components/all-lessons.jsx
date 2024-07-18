@@ -35,7 +35,7 @@ export const AllLessons = () => {
   }
 
   if (!lessons) {
-    return <div>Loading...</div>
+    return <div>Laddar...</div>
   }
 
   return (

@@ -5,6 +5,14 @@ export const navbar = [
         route: '/'
     },
     {
+        label: "Lektioner Årskurs 7-9",
+        route: '/grades/hogstadiet'
+    },
+    {
+        label: "Lektionsplanering Gymnasiet",
+        route: '/'
+    },
+    {
         label: 'Ladda upp lektionsplanering',
         route: '/admin/create'
     },   
