@@ -23,9 +23,11 @@ const Filter = ({ subjects, grades, onFilterChange }) => {
   }
 
   return (
+    <div className='text-center'>
+      <p>Filtrera på ämne och skolform</p>
     <div className='flex flex-row space-x-4 p-4 rounded max-w-xs w-full'>
       <Select value={selectedSubject} onValueChange={handleSubjectChange}>
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="rounded w-[180px]">
           <SelectValue>{selectedSubject === 'all' ? 'Alla ämnen' : selectedSubject}</SelectValue>
         </SelectTrigger>
         <SelectContent className="bg-white text-black">
@@ -37,7 +39,7 @@ const Filter = ({ subjects, grades, onFilterChange }) => {
       </Select>
 
       <Select value={selectedGrade} onValueChange={handleGradeChange}>
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="rounded w-[180px]">
           <SelectValue>{selectedGrade === 'all' ? 'Alla' : selectedGrade}</SelectValue>
         </SelectTrigger>
         <SelectContent className="bg-white text-black">
@@ -47,6 +49,7 @@ const Filter = ({ subjects, grades, onFilterChange }) => {
             ))}
         </SelectContent>
       </Select>
+    </div>
     </div>
   )
 }
