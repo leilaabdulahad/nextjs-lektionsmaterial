@@ -47,7 +47,7 @@ export const AllLessons = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredLessons.map((lesson) => (
           <Link key={lesson._id} href={`/detailpage/${lesson._id}`}>
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-700 hover:scale-105">
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-center">{lesson.title}</h3>
                 <div className="flex flex-row place-content-center space-x-4">

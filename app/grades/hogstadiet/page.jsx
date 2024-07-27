@@ -22,7 +22,7 @@ const Hogstadiet = () => {
         <div className="container mx-auto p-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {hogstadietLessons.map((lesson) => (
-                    <div key={lesson._id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div key={lesson._id} className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-700 hover:scale-105">
                         <div className="p-6">
                             <h3 className="text-lg font-semibold text-center mb-2">{lesson.title}</h3>
                             <div className="flex flex-row justify-center space-x-4 mb-4">

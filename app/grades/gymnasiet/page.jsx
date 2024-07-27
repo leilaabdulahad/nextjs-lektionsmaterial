@@ -19,19 +19,21 @@ const Gymnasiet = () => {
     }
 
     return (
-        <div>
-            {gymnasietLessons.map((lesson) => (
-                <div key={lesson._id} className="bg-white shadow-lg rounded-lg overflow-hidden">
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-center">{lesson.title}</h3>
-                  <div className="flex flex-row place-content-center space-x-4">
-                  <p className="text-gray-500">{lesson.subject}</p>
-                  <p className="text-gray-500 mb-4">Årskurs: {lesson.grade}</p>
-                  </div>
-                  <p className="text-gray-700 mb-4">{lesson.description.substring(0, 300)}</p>
-                </div>
-              </div>
-            ))}
+        <div className="container mx-auto p-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {gymnasietLessons.map((lesson) => (
+                    <div key={lesson._id} className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-700 hover:scale-105">
+                        <div className="p-6">
+                            <h3 className="text-lg font-semibold text-center mb-2">{lesson.title}</h3>
+                            <div className="flex flex-row justify-center space-x-4 mb-4">
+                                <p className="text-gray-500">{lesson.subject}</p>
+                                <p className="text-gray-500">Årskurs: {lesson.grade}</p>
+                            </div>
+                            <p className="text-gray-700 mb-4">{lesson.description.substring(0, 300)}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
