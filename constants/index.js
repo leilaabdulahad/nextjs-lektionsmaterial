@@ -5,11 +5,11 @@ export const navbar = [
         route: '/'
     },
     {
-        label: "Lektionsmaterial högstadiet",
+        label: "Högstadiet",
         route: '/grades/hogstadiet'
     },
     {
-        label: "Lektionsmaterial gymnasiet",
+        label: "Gymnasiet",
         route: '/grades/gymnasiet'
     },
     {
