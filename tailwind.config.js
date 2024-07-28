@@ -20,6 +20,7 @@ module.exports = {
       backgroundImage: theme => ({
         'header-background': "url('/h3.jpg')",
         'about-background': "url('/h4.jpg')",
+        'contact-background': "url('/contact.jpg')",
       }),
       colors: {
         backgroundColor: {

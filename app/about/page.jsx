@@ -20,7 +20,7 @@ const About = () => {
             >
               <img src={employee.image} alt={employee.name} className="w-20 h-20 rounded-full mr-4" />
               <div>
-                <h2 className="text-xl font-bold mb-2">{employee.name}</h2>
+                <h2 className="text-xl font-bold">{employee.name}</h2>
                 <a href={`mailto:${employee.email}`} className="text-gray-800 hover:underline">{employee.email}</a>
               </div>
             </div>
