@@ -1,52 +1,62 @@
 'use client'
-
 import { useState } from "react"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { useMutation } from "convex/react"
+import { api } from "@/convex/_generated/api"
 
 export default function Contact() {
+  const submitContactForm = useMutation(api.contact.submitContactForm)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
-  });
+  })
 
   const [errorMessage, setErrorMessage] = useState('')
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData({
       ...formData,
       [name]: value
-    });
-  };
+    })
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-   
     if (Object.values(formData).some(field => field.trim() === '')) {
       setErrorMessage('Alla fält är obligatoriska');
-      return;
+      return
     }
 
-    setErrorMessage('');
+    setErrorMessage('')
 
-    console.log('Form data submitted', formData);
+    try {
+      await submitContactForm(formData)
+      console.log('Form data submitted', formData)
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      })
 
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-  };
+    } catch (error) {
+      console.error(error)
+      setErrorMessage('Misslyckades med att skicka meddelande')
+    }
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="max-w-2xl w-full p-6 shadow-md rounded-md">
+        <img 
+          src="/contact.jpg" 
+          alt="" 
+          className="w-full h-auto mb-6 rounded-md"/>
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Kontakta oss</h1>
-        <p className="text-center">text</p>
         {errorMessage && <div className="text-red-500 text-center mb-4">{errorMessage}</div>}
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>

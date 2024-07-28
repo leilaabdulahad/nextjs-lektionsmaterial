@@ -13,4 +13,10 @@ export default defineSchema({
     subject: v.string(),
     grade: v.string(),
   }),
+  contactMessages: defineTable({
+    name: v.string(),
+    email: v.string(),
+    message: v.string(),
+    createdAt: v.number(),
+  })
 });
