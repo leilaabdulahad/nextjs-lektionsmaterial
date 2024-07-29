@@ -15,6 +15,7 @@ export default function Contact() {
   })
 
   const [errorMessage, setErrorMessage] = useState('')
+  const [successMessage, setSuccessMessage] = useState('')
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -28,7 +29,8 @@ export default function Contact() {
     e.preventDefault()
 
     if (Object.values(formData).some(field => field.trim() === '')) {
-      setErrorMessage('Alla fält är obligatoriska');
+      setErrorMessage('Alla fält är obligatoriska')
+      setSuccessMessage('')
       return
     }
 
@@ -42,22 +44,21 @@ export default function Contact() {
         email: '',
         message: ''
       })
-
+      setSuccessMessage('Meddelande skickat!')
     } catch (error) {
       console.error(error)
       setErrorMessage('Misslyckades med att skicka meddelande')
+      setSuccessMessage('')
     }
   }
 
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="max-w-2xl w-full p-6 shadow-md rounded-md">
-        <img 
-          src="/contact.jpg" 
-          alt="" 
-          className="w-full h-auto mb-6 rounded-md"/>
+        <img className="w-full h-64 object-cover rounded-md mb-8 shadow-lg bg-contact-background" />
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Kontakta oss</h1>
         {errorMessage && <div className="text-red-500 text-center mb-4">{errorMessage}</div>}
+        {successMessage && <div className="text-green-500 text-center mb-4">{successMessage}</div>}
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>
             <Label htmlFor="name" className="block text-sm font-medium text-gray-700">Namn:</Label>
