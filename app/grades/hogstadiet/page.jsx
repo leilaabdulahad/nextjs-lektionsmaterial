@@ -27,7 +27,7 @@ const Hogstadiet = () => {
                             <h3 className="text-lg font-semibold text-center mb-2">{lesson.title}</h3>
                             <div className="flex flex-row justify-center space-x-4 mb-4">
                                 <p className="text-gray-500">{lesson.subject}</p>
-                                <p className="text-gray-500">Årskurs: {lesson.grade}</p>
+                                <p className="text-gray-500">{lesson.grade}</p>
                             </div>
                             <p className="text-gray-700 mb-4">{lesson.description.substring(0, 300)}</p>
                         </div>
