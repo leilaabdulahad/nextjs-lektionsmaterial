@@ -13,8 +13,8 @@ export const navbar = [
         route: '/grades/gymnasiet'
     },
     {
-        label: 'Grovplanering',
-        route: '/grovplanering'
+        label: 'Årsplanering',
+        route: '/arsplanering'
     },
     {
         label: 'Ladda upp lektionsplanering',
