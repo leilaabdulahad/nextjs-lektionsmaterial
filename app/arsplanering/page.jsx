@@ -4,11 +4,17 @@ import { subjects } from '@/constants/årsplanering';
 
 const Grovplanering = () => {
   return (
+    <>
+    <img 
+        src='arsplanering.jpg'
+        className='w-full h-80 object-cover'
+    />
+
     <div className='min-h-screen flex flex-col items-center justify-center px-4'>
       <h1 className='text-4xl font-bold text-gray-800 mb-8'>Årsplanering</h1>
       <div className='w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {subjects.map((subject) => (
-          <Link key={subject.name} href={subject.path} passHref>
+            <Link key={subject.name} href={subject.path} passHref>
             <button className='w-full bg-black hover:bg-gray-600 text-white font-bold py-4 shadow-lg rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105'>
               {subject.name}
             </button>
@@ -16,6 +22,7 @@ const Grovplanering = () => {
         ))}
       </div>
     </div>
+        </>
   );
 };
 
