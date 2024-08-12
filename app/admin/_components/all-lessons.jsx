@@ -41,12 +41,19 @@ export const AllLessons = () => {
   return (
     <div className="relative rounded-2xl">
       <div className="p-4 flex place-content-center">
-        <Filter subjects={subjects} grades={grades} onFilterChange={handleFilterChange} />
+        <Filter 
+          subjects={subjects} 
+          grades={grades} 
+          onFilterChange={handleFilterChange}
+          noLessonPlans={filteredLessons.length === 0}
+          />
       </div>
       <div className="container mx-auto p-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredLessons.length > 0 ? (
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredLessons.map((lesson) => (
-          <Link key={lesson._id} href={`/detailpage/${lesson._id}`}>
+            <Link key={lesson._id} href={`/detailpage/${lesson._id}`}>
             <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-700 hover:scale-105">
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-center">{lesson.title}</h3>
@@ -60,6 +67,9 @@ export const AllLessons = () => {
           </Link>
           ))}
         </div>
+          ):(
+            <div className="text-center text-gray-500">Inget material tillgängligt</div>
+          )}
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 export const subjects = [
     { name: 'Svenska', path: '/grovplanering/svenska' },
-    { name: 'Svenska som andraspråk', path: '/grovplanering/sva'},
+    { name: 'SVA', path: '/grovplanering/sva'},
     { name: 'Engelska', path: '/grovplanering/engelska' },
     { name: 'Matematik', path: '/grovplanering/matematik' },
     { name: 'Naturkunskap', path: '/grovplanering/naturkunskap' },

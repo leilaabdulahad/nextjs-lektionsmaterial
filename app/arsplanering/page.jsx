@@ -9,7 +9,7 @@ const Grovplanering = () => {
       <div className='w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {subjects.map((subject) => (
           <Link key={subject.name} href={subject.path} passHref>
-            <button className='w-full bg-black hover:bg-gray-600 text-white font-bold py-4 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105'>
+            <button className='w-full bg-black hover:bg-gray-600 text-white font-bold py-4 shadow-lg rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105'>
               {subject.name}
             </button>
           </Link>
