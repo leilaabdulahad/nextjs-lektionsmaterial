@@ -18,9 +18,9 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
-        'header-background': "url('/h3.jpg')",
-        'about-background': "url('/h4.jpg')",
-        'contact-background': "url('/contact.jpg')",
+        'header-background': "url('/images/h3.jpg')",
+        'about-background': "url('/images/h4.jpg')",
+        'contact-background': "url('/images/contact.jpg')",
       }),
       colors: {
         backgroundColor: {
