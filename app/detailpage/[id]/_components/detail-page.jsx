@@ -32,13 +32,13 @@ export default function DetailPage({ lesson }) {
         )}
         {user && (
           <Link href={`/admin/edit/${lesson._id}`}>
-            <a 
+            <p 
               className={`px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 ${isHovered ? 'bg-blue-800' : ''}`}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
               Redigera
-            </a>
+            </p>
           </Link>
         )}
       </div>
