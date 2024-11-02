@@ -14,7 +14,29 @@ Convex
 Tailwind
 Clerk
 
+### Installation 
 
-
-
-
+1. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+2. Install packages
+   ```sh
+   npm install
+   ```
+3. Create an `.env.local` file and fill in the necessary keys from Clerk and Convex. The Convex keys are created automatically by Convex during installation. 
+   ```
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+   CLERK_SECRET_KEY=
+   
+   CONVEX_DEPLOYMENT=
+   NEXT_PUBLIC_CONVEX_URL=
+   ```
+4. Run the development server
+   ```sh
+   npm run dev
+   ```
+5. Run the Convex development server. Here the Convex enviroment variables will be automatically generated
+   ```sh
+   npx convex dev
+   ```
