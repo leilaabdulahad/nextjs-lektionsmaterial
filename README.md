@@ -2,6 +2,7 @@
 ## Table of Contents
 - [About the Project](#about-the-project)
 - [Technologies](#technologies)
+- [Installation](#installation)
 
 ### About the project 
 As a former teacher, I understand the importance of having comprehensive and easily accessible resources. While there are many educational websites available, I noticed a significant gap: none of the websites offer all the materials firmly anchored in the Swedish curriculum in an easy and understandble way for the students. 
