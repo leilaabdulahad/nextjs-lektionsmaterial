@@ -23,7 +23,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="text-black text-sm">
-          &copy; {new Date().getFullYear()} LektionsMaterial. All rights reserved.
+         Copyright &copy; {new Date().getFullYear()} Leila Abdulahad
         </div>
       </div>
     </footer>
