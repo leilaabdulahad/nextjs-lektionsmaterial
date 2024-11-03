@@ -1,5 +1,4 @@
 'use client'
-
 import { useRouter } from "next/navigation"
 import Link from 'next/link'
 import { useUser } from '@clerk/clerk-react'
@@ -15,7 +14,7 @@ export default function DetailPage({ lesson }) {
   if (!lesson) return null
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="min-h-screen py-8 px-4">
       <Card className="max-w-4xl mx-auto">
         <CardHeader>
           <div className="flex items-center justify-between mb-4">
@@ -47,13 +46,13 @@ export default function DetailPage({ lesson }) {
             </div>
             <div className="flex items-center gap-2">
               <GraduationCap className="w-5 h-5" />
-              <span className="text-sm">Årskurs: {lesson.grade}</span>
+              <span className="text-sm">{lesson.grade}</span>
             </div>
           </div>
         </CardHeader>
 
         <CardContent className="space-y-6">
-          <div className="bg-gray-50 rounded-lg p-6">
+          <div className="rounded-lg">
             <p className="text-gray-600 leading-relaxed">
               {lesson.description}
             </p>
@@ -64,7 +63,7 @@ export default function DetailPage({ lesson }) {
               href={lesson.pdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 rounded-xl"
             >
               <FileText className="w-4 h-4 text-red-500" />
               <span>View PDF</span>

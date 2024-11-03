@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useMutation } from "convex/react"
 import { api } from "@/convex/_generated/api"
+import { Send, Mail, User, MessageSquare } from "lucide-react"
 
 export default function Contact() {
   const submitContactForm = useMutation(api.contact.submitContactForm)
@@ -13,7 +14,6 @@ export default function Contact() {
     email: '',
     message: ''
   })
-
   const [errorMessage, setErrorMessage] = useState('')
   const [successMessage, setSuccessMessage] = useState('')
 
@@ -27,15 +27,12 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
     if (Object.values(formData).some(field => field.trim() === '')) {
       setErrorMessage('Alla fält är obligatoriska')
       setSuccessMessage('')
       return
     }
-
     setErrorMessage('')
-
     try {
       await submitContactForm(formData)
       console.log('Form data submitted', formData)
@@ -53,52 +50,92 @@ export default function Contact() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="max-w-2xl w-full p-6 shadow-md rounded-md">
-        <img className="w-full h-64 object-cover rounded-md mb-8 shadow-lg bg-contact-background" />
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Kontakta oss</h1>
-        {errorMessage && <div className="text-red-500 text-center mb-4">{errorMessage}</div>}
-        {successMessage && <div className="text-green-500 text-center mb-4">{successMessage}</div>}
-        <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-          <div>
-            <Label htmlFor="name" className="block text-sm font-medium text-gray-700">Namn:</Label>
-            <Input
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
-              required
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-gray-50 py-16 px-4">
+      <div className="max-w-2xl mx-auto">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          {/* Header Image */}
+          <div className="relative h-48 bg-slate-800">
+            <img 
+              className="w-full h-full object-cover opacity-60" 
+              alt="Contact background"
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-800/90 to-slate-900/90" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6">
+              <Mail className="w-12 h-12 mb-4 text-slate-200" />
+              <h1 className="text-3xl font-bold text-center">Kontakta oss</h1>
+            </div>
           </div>
-          <div>
-            <Label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
-              required
-            />
+
+          {/* Form container */}
+          <div className="p-8">
+            {errorMessage && (
+              <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded">
+                {errorMessage}
+              </div>
+            )}
+            {successMessage && (
+              <div className="mb-6 p-4 bg-green-50 border-l-4 border-green-500 text-green-700 rounded">
+                {successMessage}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-1">
+                <Label htmlFor="name" className="text-sm font-medium text-slate-700 flex items-center gap-2">
+                  <User className="w-4 h-4" />
+                  Namn
+                </Label>
+                <Input
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-slate-200 focus:border-slate-400 transition-all"
+                  required
+                />
+              </div>
+
+              <div className="space-y-1">
+                <Label htmlFor="email" className="text-sm font-medium text-slate-700 flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  Epostadress
+                </Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-slate-200 focus:border-slate-400 transition-all"
+                  required
+                />
+              </div>
+
+              <div className="space-y-1">
+                <Label htmlFor="message" className="text-sm font-medium text-slate-700 flex items-center gap-2">
+                  <MessageSquare className="w-4 h-4" />
+                  Meddelande
+                </Label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-slate-200 focus:border-slate-400 transition-all min-h-[150px] resize-y"
+                  required
+                />
+              </div>
+
+              <Button 
+                type="submit" 
+                className="w-full bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
+              >
+                <Send className="w-4 h-4" />
+                Skicka meddelande
+              </Button>
+            </form>
           </div>
-          <div>
-            <Label htmlFor="message" className="block text-sm font-medium text-gray-700">Meddelande:</Label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
-              rows="6"
-              required
-            />
-          </div>
-          <Button type="submit" className="w-full py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-black-700 focus:outline-none mt-6">
-            Skicka meddelande
-          </Button>
-        </form>
+        </div>
       </div>
     </div>
   )
