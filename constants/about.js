@@ -1,19 +1,14 @@
 export const about = [
     {
-        title: "Om LektionsMaterial",
-        content: "En samling högkvalitativt lektionsmaterial för högstadiet och gymnasiet med fokus på ämnena svenska, svenska som andraspråk och engelska. Vi strävar efter att erbjuda det bästa innehållet för att stödja dig i ditt arbete som lärare. Vårt material är noggrant utvalt och anpassat för att möta de senaste läroplanerna och pedagogiska riktlinjerna. Genom att använda LektionsMaterial kan du vara säker på att du får tillgång till resurser som är både inspirerande och effektiva. Oavsett om du söker material för grammatik, litteraturstudier, skrivövningar eller språkutveckling, hittar du det hos oss. Vi är dedikerade till att kontinuerligt uppdatera och förbättra vårt utbud för att säkerställa att det alltid är relevant och användbart för både lärare och elever. Vi har dessutom en flik för årsplaneringar där du kan hitta förslag på hur du kan planera ditt arbete under läsåret."
+        title: "Vem är vi?",
+        content: "LektionsMaterial skapades för att fylla ett tomrum i lärarresurser online, ett tomrum jag själv upptäckte när jag som ny lärare skulle planera min första termin. Jag insåg då att det saknades en plats för tillförlitliga årsplaneringar och högkvalitativt lektionsmaterial som man kunde inspireras av. De resurser som fanns online varierade i kvalitet och struktur, vilket gjorde det svårt och tidskrävande att hitta något som verkligen passade. LektionsMaterial erbjuder en samlad plats med material skapat av lärare för lärare, noggrant anpassat för att följa skolverket senaste styrdokument. Här hittar du inspirerande resurser för grammatik, litteraturstudier, skrivövningar och språkutveckling. Inspireras gärna eller använd vårt material i din undervisning, med tryggheten att det är utvecklat utifrån en pedagogisk förståelse och med fokus på effektiv undervisning. Vi är dedikerade till att kontinuerligt uppdatera vårt utbud, så att det alltid är relevant och användbart för både lärare och elever. Kontakta oss gärna vid frågor, tankar eller förslag. "
     }
 ]
 
 export const employees = [
     {
         name: "Leila Abdulahad",
-        email: "leila@lektionsmaterial.se",
+        email: "leilaabdulahad@hotmail.com",
         image: "/employee.png"
-    },
-    {
-        name: "Tove Tvingstedt",
-        email: "tove@lektionsmaterial.se",
-        image: "/employee2.jpg"
     }
 ]

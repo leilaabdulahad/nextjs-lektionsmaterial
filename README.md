@@ -19,7 +19,7 @@ Clerk
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/leilaabdulahad/nextjs-lektionsmaterial.git
    ```
 2. Install packages
    ```sh
