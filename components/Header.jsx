@@ -1,3 +1,4 @@
+'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { GraduationCap, BookOpen } from 'lucide-react'
@@ -53,7 +54,7 @@ const Header = () => {
       className="relative w-full min-h-[500px] lg:min-h-[600px] px-4 py-12 md:py-20 overflow-hidden"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900" />
       
       {/* Animated patterns */}
       <motion.div 
@@ -62,7 +63,7 @@ const Header = () => {
         animate={{ rotate: 360 }}
         transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
       >
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_500px_at_50%_200px,#fff,transparent)]" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_500px_at_50%_200px,#ffffff10,transparent)]" />
       </motion.div>
 
       <div className="relative max-w-7xl mx-auto">
@@ -72,14 +73,14 @@ const Header = () => {
         >
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-100 mb-6"
           >
             Lärande utan gränser
           </motion.h1>
           
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-white/90 max-w-2xl mb-12 px-4"
+            className="text-lg md:text-xl text-gray-300 max-w-2xl mb-12 px-4"
           >
             Lektionsmaterial för högstadiet och gymnasiet skapade av lärare för lärare.
             Utforska vårt omfattande bibliotek av pedagogiska resurser.
@@ -93,7 +94,7 @@ const Header = () => {
               <motion.button
                 variants={buttonVariants}
                 whileHover="hover"
-                className="w-full md:w-auto group flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold shadow-lg"
+                className="w-full md:w-auto group flex items-center justify-center gap-2 px-8 py-4 bg-gray-200 text-gray-800 rounded-xl font-semibold shadow-lg"
               >
                 <GraduationCap className="w-5 h-5 transition-transform group-hover:-rotate-12" />
                 <span>Gymnasiet</span>
@@ -104,7 +105,7 @@ const Header = () => {
               <motion.button
                 variants={buttonVariants}
                 whileHover="hover"
-                className="w-full md:w-auto group flex items-center justify-center gap-2 px-8 py-4 bg-blue-900 text-white rounded-xl font-semibold shadow-lg"
+                className="w-full md:w-auto group flex items-center justify-center gap-2 px-8 py-4 bg-gray-800 text-gray-200 rounded-xl font-semibold shadow-lg"
               >
                 <BookOpen className="w-5 h-5 transition-transform group-hover:rotate-12" />
                 <span>Högstadiet</span>
@@ -116,13 +117,13 @@ const Header = () => {
 
       {/* Circles */}
       <motion.div 
-        className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 translate-y-1/2"
+        className="absolute bottom-0 left-0 w-64 h-64 bg-gray-500/10 rounded-full -translate-x-1/2 translate-y-1/2"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
       />
       <motion.div 
-        className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/2 -translate-y-1/2"
+        className="absolute top-0 right-0 w-96 h-96 bg-gray-500/10 rounded-full translate-x-1/2 -translate-y-1/2"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1, delay: 0.7 }}
