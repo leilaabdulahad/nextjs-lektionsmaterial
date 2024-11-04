@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { GraduationCap, BookOpen } from 'lucide-react'
 
 const Header = () => {
   const containerVariants = {
@@ -7,28 +8,41 @@ const Header = () => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.8,
+        duration: 1,
         staggerChildren: 0.3
       }
     }
-  };
+  }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.6,
         ease: "easeOut"
       }
     }
   }
 
   const buttonVariants = {
-    initial: { x: 100, opacity: 0 },
-    animate: { x: 0, opacity: 1 },
-    hover: { scale: 1.05, transition: { duration: 0.2 } }
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    },
+    hover: { 
+      scale: 1.05,
+      boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
+      transition: { 
+        duration: 0.2 
+      }
+    }
   }
 
   return (
@@ -36,46 +50,83 @@ const Header = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="relative max-w-screen-lg mx-auto text-center p-20  rounded-3xl shadow-2xl m-4 h-96 overflow-hidden"
+      className="relative w-full min-h-[500px] lg:min-h-[600px] px-4 py-12 md:py-20 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700" />
       
+      {/* Animated patterns */}
       <motion.div 
-        className="relative z-10 flex flex-col items-center justify-center h-full gap-8"
-        variants={itemVariants}
+        className="absolute inset-0 opacity-10"
+        initial={{ rotate: 0 }}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
       >
-        <motion.p 
-          className="text-lg font-medium text-white leading-relaxed max-w-sm mx-auto whitespace-pre-wrap"
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_500px_at_50%_200px,#fff,transparent)]" />
+      </motion.div>
+
+      <div className="relative max-w-7xl mx-auto">
+        <motion.div
+          className="flex flex-col items-center justify-center text-center"
           variants={itemVariants}
         >
-          Lektionsmaterial för högstadiet och gymnasiet skapade av lärare för lärare.
-        </motion.p>
+          <motion.h1 
+            variants={itemVariants}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+          >
+            Lärande utan gränser
+          </motion.h1>
+          
+          <motion.p
+            variants={itemVariants}
+            className="text-lg md:text-xl text-white/90 max-w-2xl mb-12 px-4"
+          >
+            Lektionsmaterial för högstadiet och gymnasiet skapade av lärare för lärare.
+            Utforska vårt omfattande bibliotek av pedagogiska resurser.
+          </motion.p>
 
-        <div className="flex flex-col gap-4 absolute right-4">
-          <motion.button
-            variants={buttonVariants}
-            initial="initial"
-            animate="animate"
-            whileHover="hover"
-            transition={{ delay: 0.5 }}
-            className="px-6 py-3 bg-white text-blue-800 rounded-lg font-medium shadow-lg hover:shadow-xl transition-shadow"
+          <motion.div 
+            className="flex flex-col md:flex-row gap-4 w-full max-w-md md:max-w-2xl justify-center px-4"
+            variants={itemVariants}
           >
-            Gymnasiet
-          </motion.button>
-          <Link href="/grades/hogstadiet">
-          <motion.button
-            variants={buttonVariants}
-            initial="initial"
-            animate="animate"
-            whileHover="hover"
-            transition={{ delay: 0.7 }}
-            className="px-6 py-3 bg-white text-blue-800 rounded-lg font-medium shadow-lg hover:shadow-xl transition-shadow"
-          >
-            Högstadiet
-          </motion.button>
+            <Link href="/grades/gymnasiet" className="w-full md:w-auto">
+              <motion.button
+                variants={buttonVariants}
+                whileHover="hover"
+                className="w-full md:w-auto group flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold shadow-lg"
+              >
+                <GraduationCap className="w-5 h-5 transition-transform group-hover:-rotate-12" />
+                <span>Gymnasiet</span>
+              </motion.button>
             </Link>
-        </div>
-      </motion.div>
+
+            <Link href="/grades/hogstadiet" className="w-full md:w-auto">
+              <motion.button
+                variants={buttonVariants}
+                whileHover="hover"
+                className="w-full md:w-auto group flex items-center justify-center gap-2 px-8 py-4 bg-blue-900 text-white rounded-xl font-semibold shadow-lg"
+              >
+                <BookOpen className="w-5 h-5 transition-transform group-hover:rotate-12" />
+                <span>Högstadiet</span>
+              </motion.button>
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Circles */}
+      <motion.div 
+        className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 translate-y-1/2"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      />
+      <motion.div 
+        className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/2 -translate-y-1/2"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1, delay: 0.7 }}
+      />
     </motion.div>
   )
 }

@@ -19,7 +19,7 @@ export const LessonCard = ({ lesson }) => (
           </div>
           <div className="flex items-center gap-1">
             <GraduationCap className="w-4 h-4" />
-            <span>Årskurs: {lesson.grade}</span>
+            <span>{lesson.grade}</span>
           </div>
         </div>
       </CardHeader>

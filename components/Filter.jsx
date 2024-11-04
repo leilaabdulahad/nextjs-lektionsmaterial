@@ -50,7 +50,7 @@ const Filter = ({ subjects, grades, onFilterChange }) => {
     <Card className="w-full max-w-2xl mx-auto shadow-lg">
       <CardHeader className="space-y-1">
         <div className="flex items-center justify-center space-x-2">
-          <FilterIcon className="w-5 h-5 text-blue-500" />
+          <FilterIcon className="w-5 h-5" />
           <CardTitle className="text-xl font-semibold text-gray-800">
             Filtrera på ämne och skolform
           </CardTitle>
@@ -111,7 +111,7 @@ const Filter = ({ subjects, grades, onFilterChange }) => {
               )}
               {selectedGrade !== 'all' && (
                 <ActiveFilterTag
-                  label={`Årskurs: ${selectedGrade}`}
+                  label={`${selectedGrade}`}
                   onRemove={handleRemoveGrade}
                 />
               )}
