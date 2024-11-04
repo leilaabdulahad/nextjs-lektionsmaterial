@@ -50,7 +50,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-gray-50 py-16 px-4">
+    <div className="min-h-screen py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Header Image */}
