@@ -3,31 +3,20 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="text-white py-2 mt-20">
+    <footer className="py-4 mt-20">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-        <div>
-          <h2 className="text-2xl font-bold text-black mb-1">LektionsMaterial</h2>
+        <div className="text-center md:text-left">
+          <h2 className="font-bold">LektionsMaterial</h2>
         </div>
-        <div className="flex space-x-4 mb-4 md:mb-0">
-          <a href="#" className="text-black">
-            <FaFacebookF />
-          </a>
-          <a href="#" className="text-black">
-            <FaTwitter />
-          </a>
-          <a href="#" className="text-black">
-            <FaInstagram />
-          </a>
-          <a href="#" className="text-black">
-            <FaLinkedinIn />
-          </a>
+        <div className="text-sm text-center my-2 md:my-0">
+          © Copyright LektionsMaterial 2024
         </div>
-        <div className="text-black text-sm">
-         Copyright &copy; {new Date().getFullYear()} Leila Abdulahad
+        <div className="text-sm text-black md:text-right mt-4 md:mt-0">
+          Hemsida av Leila Abdulahad
         </div>
       </div>
     </footer>
   )
 }
 
-export default Footer
+export default Footer;
